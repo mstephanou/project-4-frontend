@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 const baseUrl = 'http://localhost:8000';
 const GamesList = () => {
   const [games, setGames] = React.useState(null);
-  const [gameSearch, setGameSearch] = React.useState(null);
-  const [title, setTitle] = React.useState('');
+  const [searchQuery, setSearchQuery] = React.useState('');
 
   React.useEffect(() => {
     console.log('request being made');
@@ -17,17 +16,17 @@ const GamesList = () => {
   }, []);
 
   React.useEffect(() => {
-    const getGameSearch = async (title) => {
-      console.log(title);
+    const performSearchQuery = async () => {
+      console.log(`Doing a search for ${searchQuery}`);
       const response = await axios.get(
-        `${baseUrl}/games/search/?game_title=${title}`
+        `${baseUrl}/games/search/?game_title=${searchQuery}`
       );
-      setGameSearch(response.data);
+      setGames(response.data);
     };
-    getGameSearch();
-  }, [title]);
+    performSearchQuery();
+  }, [searchQuery]);
 
-  const handleChange = (e) => setTitle(e.target.value);
+  const handleChange = (e) => setSearchQuery(e.target.value);
 
   return (
     <div>
@@ -42,7 +41,7 @@ const GamesList = () => {
               type='text'
               placeholder='What game are you looking for?'
               onChange={handleChange}
-              value={title}
+              value={searchQuery}
             ></input>
             <div className='columns is-multiline'>
               {games.map((game) => (
