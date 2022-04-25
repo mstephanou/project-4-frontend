@@ -22,3 +22,19 @@ export const getUserbyId = (id) =>
     method: 'GET',
     url: `${baseUrl}/authentication/login/${id}`,
   });
+
+export const registerUser = (credentials) =>
+  axios
+    .request({
+      method: 'POST',
+      url: `${baseUrl}/authentication/register/`,
+      data: credentials,
+    })
+    .then(({ data }) => {
+      data.token
+        ? window.sessionStorage.setItem('token', data.token)
+        : window.sessionStorage.removeItem('token');
+
+      return data;
+    })
+    .catch(console.error);

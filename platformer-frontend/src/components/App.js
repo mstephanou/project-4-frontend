@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/output.css';
 import { baseUrl } from '../helpers/api';
 import GamesList from './GamesList';
-import Game from './Game';
+import SingleGame from './SingleGame';
 import Nav from './Nav';
 import Footer from './Footer';
 import Home from './Home';
@@ -26,7 +27,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/games' element={<GamesList />} />
-        <Route path='/games/:id' element={<Game />} />
+        <Route path='/games/:id' element={<SingleGame />} />
         <Route path='/login' element={<Login />} />
       </Routes>
       <Footer />
