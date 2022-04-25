@@ -1,11 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-
 const baseUrl = 'http://localhost:8000';
-
 const GamesList = () => {
   const [games, setGames] = React.useState(null);
+  const [gameSearch, setGameSearch] = React.useState(null);
+  const [title, setTitle] = React.useState('');
 
   React.useEffect(() => {
     console.log('request being made');
@@ -16,6 +16,19 @@ const GamesList = () => {
     getAllGames();
   }, []);
 
+  React.useEffect(() => {
+    const getGameSearch = async (title) => {
+      console.log(title);
+      const response = await axios.get(
+        `${baseUrl}/games/search/?game_title=${title}`
+      );
+      setGameSearch(response.data);
+    };
+    getGameSearch();
+  }, [title]);
+
+  const handleChange = (e) => setTitle(e.target.value);
+
   return (
     <div>
       <h1 className='title is-2'>Latest reviews</h1>
@@ -25,10 +38,11 @@ const GamesList = () => {
         <section className='section'>
           <div className='container'>
             <input
-              className='input is-info input-start'
+              className='input is-info'
               type='text'
               placeholder='What game are you looking for?'
-              // onChange={handleChange}
+              onChange={handleChange}
+              value={title}
             ></input>
             <div className='columns is-multiline'>
               {games.map((game) => (
