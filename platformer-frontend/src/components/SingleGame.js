@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import { useParams } from 'react-router-dom';
 
-const baseUrl = 'http://localhost:8000';
+const baseUrl = 'https://msplatformer.herokuapp.com';
 
 const SingleGame = () => {
   const [singleGame, setSingleGame] = React.useState(null);
@@ -23,7 +23,7 @@ const SingleGame = () => {
   }
   return (
     <>
-      <div className='hero is-primary is-fullheight'>
+      <div className='hero is-fullheight'>
         <div className='container'>
           <div className='columns'>
             <div className='column'>
@@ -67,7 +67,7 @@ const SingleGame = () => {
                   {singleGame.categories.map((category) => (
                     <div key={category.id}>
                       <div>
-                        Who is this game suitable for?: <br />
+                        Categories: <br />
                         {category.name}
                       </div>
                       <br />

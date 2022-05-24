@@ -19,7 +19,7 @@ const Login = () => {
   };
   return (
     <>
-      <section className='hero is-primary is-fullheight'>
+      <section className='hero is-warning is-fullheight'>
         <div className='hero-body'>
           <div className='container'>
             <div className='columns is-centered'>

@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-const baseUrl = 'http://localhost:8000';
+const baseUrl = 'https://msplatformer.herokuapp.com';
 const GamesList = () => {
   const [games, setGames] = React.useState(null);
   const [searchQuery, setSearchQuery] = React.useState('');
@@ -30,7 +30,7 @@ const GamesList = () => {
 
   return (
     <div>
-      <h1 className='title is-2'>Latest reviews</h1>
+      <h1 className='title is-3'>Latest reviews</h1>
       {!games ? (
         <h1 className='title is-4'>No reviews to list</h1>
       ) : (

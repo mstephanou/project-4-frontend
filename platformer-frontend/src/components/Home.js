@@ -2,10 +2,13 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <section className='hero is-fullheight-with-navbar is-danger'>
-      <div className='hero-body'>
+    <section className='hero is-fullheight-with-navbar '>
+      <div id='hero-image' className='hero-body'>
         <div className='container'>
-          <p className='title has-text-centered '></p>
+          <h1 className='title has-text-centered '>Platformer</h1> <br />
+          <h2 className='has-text-centered '>
+            <strong>A parent-focussed, video games reviews site.</strong>
+          </h2>
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const baseUrl = 'http://localhost:8000';
+export const baseUrl = 'https://msplatformer.herokuapp.com';
 
 export const getAllGames = () => {
   return axios.get(`${baseUrl}/games/`);

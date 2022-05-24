@@ -5,7 +5,8 @@ const Footer = () => {
     <footer className='footer has-background-light'>
       <div className='content has-text-centered'>
         <p>
-          <strong>2022 GA SEI62</strong> Michael Stephanou
+          <strong>2022 GA SEI62 |</strong>
+          <a href='https://github.com/mstephanou'> Michael Stephanou</a>
         </p>
       </div>
     </footer>
