@@ -62,7 +62,7 @@ Like most reviews sites, the user has access to:
 
 Before building the project, I did some research on popular reviews sites like Metacritic, Steam reviews, and IMDB to gain some insight on how the page's design might go. Following this I designed wireframes for the app, aiming to see how the site navigation would flow, and established what the Entity Relationship Diagram might look like for my database.
 
-![whiteboard](./src/assets/whiteboard.png)
+![whiteboard](./platformer-frontend/assets/whiteboard.png)
 
 ## Day 3 - 7
 
@@ -86,14 +86,14 @@ By the time it came to styling my app, I was up and against the clock somewhat, 
 
 In order for my frontend to GET the correct request, I created a Game model with d different SQL relationships - Many-to-Many (developer), Many-To-Many (genres) and One-To-Many (reviews).
 
-![game-model](./src/assets/gamemodel.png)
-![review-model](./src/assets/reviewmodel.png)
+![game-model](./platformer-frontend/assets/gamemodel.png)
+![review-model](./platformer-frontend/assets/reviewmodel.png)
 
 Another piece of code that I am quite happy with is my GameSearch API view which allows me to get data from a querystring, and also allows me to query the database with a filter.
-![gamesearch](./src/assets/GameSearch.png)
+![gamesearch](./platformer-frontend/assets/gamesearch.png)
 
 And on the frontend by writing some search functionality.
-![search-query](./src/assets/SearchQuery.png)
+![search-query](./platformer-frontend/assets/searchquery.png)
 
 ## Known Bugs or errors
 
