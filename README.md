@@ -70,7 +70,7 @@ Timeframe: 5 days
 
 I started the development process by building my models, views and serializers in Django to create a SQL database. I spent most of the project time working on the database because I wanted to ensure that it was all working as I wished, and the relationships I had planned were suitable for the functionality I had designed. I used TablePlus to visualise my PostgreSQL database, and Postman to test my backend requests, making sure all relationships between models were working.
 
-![django-admin]()
+![django-admin](./platformer-frontend/assets/djangoadmin.png)
 
 ## Day 8 - 10
 
