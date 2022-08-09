@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 const baseUrl = 'https://msplatformer.herokuapp.com';
+
 const GamesList = () => {
   const [games, setGames] = React.useState(null);
   const [searchQuery, setSearchQuery] = React.useState('');
@@ -29,24 +30,25 @@ const GamesList = () => {
   const handleChange = (e) => setSearchQuery(e.target.value);
 
   return (
-    <div>
-      <h1 className='title is-3'>Latest reviews</h1>
+    <div className='hero is-warning is-fullheight'>
+      <h1 className='title is-3 is-centered'>Latest Reviews</h1>
       {!games ? (
         <h1 className='title is-4'>No reviews to list</h1>
       ) : (
         <section className='section'>
-          <div className='container'>
-            <input
-              className='input is-info'
-              type='text'
-              placeholder='What game are you looking for?'
-              onChange={handleChange}
-              value={searchQuery}
-            ></input>
-            <div className='columns is-multiline'>
+          <input
+            // className='input'
+            className='input is-rounded'
+            type='text'
+            placeholder='What game are you looking for?'
+            onChange={handleChange}
+            value={searchQuery}
+          ></input>
+          <div className='box'>
+            <div className='columns is-multiline is-mobile'>
               {games.map((game) => (
                 <div key={game.id} className='column is-one-quarter'>
-                  <div key={game.id}>
+                  <span className='subtitle is-8' key={game.id}>
                     <Link key={game.id} to={`/games/${game.id}`}>
                       {game.title}
                     </Link>
@@ -55,8 +57,8 @@ const GamesList = () => {
                       style={{ objectFit: 'contain' }}
                       src={game.image}
                     />
-                    <div>{game.developer.title}</div>
-                  </div>
+                    {/* <div>{game.developer.title}</div> */}
+                  </span>
                 </div>
               ))}
             </div>

@@ -12,9 +12,9 @@ const Nav = () => {
               <Link to='/' className='navbar-item'>
                 Home
               </Link>
-              <Link to='/games/ ' className='navbar-item'>
+              {/* <Link to='/games/ ' className='navbar-item'>
                 Games
-              </Link>
+              </Link> */}
               <Link to='/login/ ' className='navbar-item'>
                 Login
               </Link>

@@ -10,22 +10,22 @@ const SingleGame = () => {
   const { id } = useParams();
   React.useEffect(() => {
     console.log('request being made');
-    const getSingleGame = async () => {
+    const getSingleVideoGame = async () => {
       const response = await axios.get(`${baseUrl}/games/detail/${id}`);
       setSingleGame(response.data);
       console.log(response.data);
     };
 
-    getSingleGame();
+    getSingleVideoGame();
   }, [id]);
   if (singleGame === null) {
     return <p>Loading...</p>;
   }
   return (
     <>
-      <div className='hero is-fullheight'>
-        <div className='container'>
-          <div className='columns'>
+      <div className='hero is-fullheight is-centered'>
+        <div className='box'>
+          <div className='columns is-mobile'>
             <div className='column'>
               <h1 className='title is-2'>{singleGame.title}</h1>
               <p>
