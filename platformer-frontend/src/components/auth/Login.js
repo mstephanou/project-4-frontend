@@ -11,12 +11,20 @@ const Login = () => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    await loginUser(credentials);
-    setCredentials(initialState);
-    navigate('/games');
+    const getLogin = async () => {
+      try {
+        await loginUser(credentials);
+        navigate('/games');
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getLogin();
+    console.log('credentials', credentials);
   };
+
   return (
     <>
       <section className='hero is-warning is-fullheight'>
@@ -34,9 +42,10 @@ const Login = () => {
                         <input
                           type='email'
                           id='email'
+                          name='email'
                           className='input'
                           placeholder='e.g. johndoe@gmail.com'
-                          // value={credentials.email}
+                          value={credentials.email}
                           onChange={handleChange}
                         />
                         <span className='icon is-small is-left'>
@@ -52,11 +61,13 @@ const Login = () => {
                         <input
                           type='password'
                           id='password'
+                          name='password'
                           className='input'
                           placeholder='**********'
-                          // value={credentials.password}
+                          value={credentials.password}
                           onChange={handleChange}
                         />
+
                         <span className='icon is-small is left'>
                           <i className='fa fa-lock'></i>
                         </span>
